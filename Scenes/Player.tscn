@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://beu687l04rooi"]
+
+[ext_resource type="Script" uid="uid://c8yvq7jkhfccc" path="res://Scenes/player.gd" id="1_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://ceokoxq7ew03r" path="res://Scenes/godot_plush_model.tscn" id="1_rpqav"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kyqiw"]
+height = 2.3199463
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_kyqiw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.1096156, 0, 0, 0, 0.6895937, 0, 0, 0, 1, 0, 0.7225765, 0)
+shape = SubResource("CapsuleShape3D_kyqiw")
+
+[node name="godot_plush_model2" parent="." instance=ExtResource("1_rpqav")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.9978863, 0, 0.06498501, 0, 1, 0, -0.06498501, 0, -0.9978863, 0, 0.9694972, 0.017639875)
