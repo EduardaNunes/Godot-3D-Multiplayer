@@ -8,5 +8,27 @@ albedo_texture = ExtResource("2_t7ir5")
 
 [node name="godot_plush_model" instance=ExtResource("1_40pmo")]
 
+[node name="Skeleton3D" parent="Rig" index="0"]
+bones/0/rotation = Quaternion(0.06958654, 0.06958655, -0.0048659644, 0.99513406)
+bones/1/rotation = Quaternion(0.00054266665, -0.042861544, 0.54081285, -0.84005)
+bones/2/rotation = Quaternion(0.23721461, 1.7561312e-07, -2.7558595e-09, 0.9714573)
+bones/4/rotation = Quaternion(-0.00054267206, -0.042861495, 0.54081285, 0.8400501)
+bones/5/rotation = Quaternion(0.11922214, -2.0500843e-07, 3.4794816e-08, 0.99286765)
+bones/7/rotation = Quaternion(0.99513406, -0.0048659653, -0.06958655, -0.06958655)
+bones/8/rotation = Quaternion(-0.26096973, -0.006252457, -0.091284975, 0.961001)
+bones/9/position = Vector3(-3.3308307e-08, 0.15368378, -1.2351457e-08)
+bones/9/rotation = Quaternion(0.12389895, -0.21461695, 0.027441215, 0.96841913)
+bones/10/position = Vector3(-3.4175958e-09, 0.20754741, -5.7180345e-09)
+bones/10/rotation = Quaternion(-0.4582506, -5.0523453e-05, 8.525081e-05, 0.8888231)
+bones/11/position = Vector3(-7.286375e-09, 0.25123602, -2.0337191e-08)
+bones/11/rotation = Quaternion(-0.000106262676, 0.9324278, -0.36135632, 4.765731e-05)
+bones/12/rotation = Quaternion(-0.26099533, 0.0059763137, 0.09124852, 0.96099925)
+bones/13/position = Vector3(-1.6307187e-08, 0.15368378, -3.3035645e-09)
+bones/13/rotation = Quaternion(0.48504302, 0.18789397, -0.10758521, 0.847263)
+bones/14/position = Vector3(1.8605126e-09, 0.20754749, -3.2998585e-08)
+bones/14/rotation = Quaternion(-0.4582507, 0.00016563239, -2.5947678e-05, 0.8888231)
+bones/15/position = Vector3(-5.6180607e-09, 0.25123596, -3.5406995e-08)
+bones/15/rotation = Quaternion(-1.8506069e-05, 0.93242776, -0.36135638, 0.00027428402)
+
 [node name="GodotPlushMesh" parent="Rig/Skeleton3D" index="0"]
 material_override = SubResource("StandardMaterial3D_4htm7")
