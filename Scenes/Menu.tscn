@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b81ktx1s238fg"]
+[gd_scene load_steps=7 format=3 uid="uid://dv7gqxjfgklsp"]
 
-[ext_resource type="Script" uid="uid://ck1etk6fuqj8j" path="res://Scripts/menu.gd" id="1_qlr77"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qlr77"]
 [ext_resource type="PackedScene" uid="uid://dbvg5shpa6ktq" path="res://Scenes/Game.tscn" id="2_idohh"]
 [ext_resource type="FontFile" uid="uid://brgd3gf6diskh" path="res://Assets/Fonts/ThaleahFat.ttf" id="3_3j6ch"]
-[ext_resource type="PackedScene" path="res://Scenes/Shaders.tscn" id="8_7mncx"]
 [ext_resource type="AudioStream" uid="uid://d2bhuw8rnkhwk" path="res://Assets/Sounds/jump05.wav" id="9_wvbt5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idohh"]
@@ -233,9 +232,6 @@ alignment = 1
 layout_mode = 2
 text = "Ok
 "
-
-[node name="Shaders" parent="." instance=ExtResource("8_7mncx")]
-visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-59.5, 74)
