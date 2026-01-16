@@ -32,3 +32,6 @@ bones/15/rotation = Quaternion(-1.8506069e-05, 0.93242776, -0.36135638, 0.000274
 
 [node name="GodotPlushMesh" parent="Rig/Skeleton3D" index="0"]
 material_override = SubResource("StandardMaterial3D_4htm7")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "idle"
