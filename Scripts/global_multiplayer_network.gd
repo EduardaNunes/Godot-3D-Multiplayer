@@ -2,7 +2,7 @@ extends Node
 
 signal connection_notification(sucess)
 
-const MENU_SCENE_PATH : String = "res://High_Level_Multiplayer/Scenes/Menu.tscn"
+const MENU_SCENE_PATH : String = "res://Scenes/Menu.tscn"
 
 var IP_ADRESS: String = "localhost"
 const PORT: int = 42069

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://crueferqv15rv"]
+[gd_scene load_steps=6 format=3 uid="uid://crueferqv15rv"]
 
 [ext_resource type="PackedScene" uid="uid://ceokoxq7ew03r" path="res://Scenes/godot_plush_model.tscn" id="1_837kf"]
 [ext_resource type="Script" uid="uid://d270r6phsxe1k" path="res://Scripts/Player_top_down.gd" id="1_obksh"]
@@ -6,6 +6,11 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obksh"]
 height = 1.6065674
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_po5vt"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_obksh")
@@ -24,5 +29,8 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 top_level = true
 script = ExtResource("3_po5vt")
 camera_anchor = NodePath("..")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_po5vt")
 
 [editable path="godot_plush_model"]

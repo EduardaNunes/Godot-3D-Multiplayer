@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene load_steps=8 format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
+[ext_resource type="Script" uid="uid://llfdc1bty4l5" path="res://Scripts/player_multiplayer_spawner.gd" id="2_j5yw3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,6 +42,16 @@ shape = SubResource("BoxShape3D_gl6un")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_iukft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9957314, 0.5114968, -0.4232912)
+visible = false
+
+[node name="AnimationPlayer" parent="CharacterBody3D/godot_plush_model" index="1"]
+autoplay = ""
+
+[node name="PlayerMultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://crueferqv15rv")
+spawn_path = NodePath("..")
+script = ExtResource("2_j5yw3")
+playerScene = ExtResource("1_iukft")
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/godot_plush_model"]

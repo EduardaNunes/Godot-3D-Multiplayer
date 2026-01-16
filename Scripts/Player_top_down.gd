@@ -5,9 +5,23 @@ var direction : Vector3
 
 @onready var model: Node3D = $godot_plush_model
 @onready var animation: AnimationPlayer = $godot_plush_model/AnimationPlayer
+@onready var camera: Camera3D = $CameraPosition/Camera3D
+
+@export var color : String
 var animation_direction : Vector3 = Vector3.ZERO
 
+# ---------------------------------------------------------------------------- #
+
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+	
+# ---------------------------------------------------------------------------- #
+
 func _physics_process(delta: float) -> void:
+	
+	if not multiplayer.has_multiplayer_peer(): return
+	if not is_multiplayer_authority(): return
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -23,6 +37,8 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 	move_and_slide()
 
+# ---------------------------------------------------------------------------- #
+
 func _update_animation():
 	if velocity.length() != 0:
 		animation.play("run")
@@ -32,3 +48,5 @@ func _update_animation():
 			model.look_at(look_at_position)
 	else:
 		animation.play("idle")
+
+# ---------------------------------------------------------------------------- #

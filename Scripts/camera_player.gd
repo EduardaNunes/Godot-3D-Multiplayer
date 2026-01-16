@@ -5,6 +5,11 @@ extends Camera3D
 @export var distance_treshold : int = 12
 
 func _ready() -> void:
+	if is_multiplayer_authority():
+		make_current()
+	else:
+		current = false
+	
 	if not camera_anchor:
 		push_error("Camera anchor not found!")
 
