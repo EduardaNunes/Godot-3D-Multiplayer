@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://crueferqv15rv"]
+
+[ext_resource type="PackedScene" uid="uid://ceokoxq7ew03r" path="res://Scenes/godot_plush_model.tscn" id="1_837kf"]
+[ext_resource type="Script" uid="uid://d270r6phsxe1k" path="res://Scripts/Player_top_down.gd" id="1_obksh"]
+[ext_resource type="Script" uid="uid://bpgjjp7cp0y1" path="res://Scripts/camera_player.gd" id="3_po5vt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obksh"]
+height = 1.6065674
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_obksh")
+
+[node name="godot_plush_model" parent="." instance=ExtResource("1_837kf")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8065796, 0)
+shape = SubResource("CapsuleShape3D_obksh")
+
+[node name="CameraPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 6)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPosition" node_paths=PackedStringArray("camera_anchor")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 6, 6)
+top_level = true
+script = ExtResource("3_po5vt")
+camera_anchor = NodePath("..")
+
+[editable path="godot_plush_model"]
