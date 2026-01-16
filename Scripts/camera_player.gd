@@ -9,7 +9,8 @@ func _ready() -> void:
 		push_error("Camera anchor not found!")
 
 func _process(delta: float) -> void:
-	global_position = global_position.move_toward(camera_anchor.global_position, calculate_speed() * delta)
+	var target_position = camera_anchor.get_global_transform_interpolated().origin
+	global_position = global_position.move_toward(target_position, calculate_speed() * delta)
 
 func calculate_speed() -> float:
 	# Quero uma velocidade entre [2, 10], de acordo com a distância
