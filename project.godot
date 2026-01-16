@@ -15,6 +15,10 @@ run/main_scene="uid://dbvg5shpa6ktq"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalMultiplayerNetwork="*res://Scripts/global_multiplayer_network.gd"
+
 [input]
 
 jump={
