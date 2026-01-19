@@ -68,6 +68,11 @@ interact={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Ground"
+3d_physics/layer_2="Players"
+
 [physics]
 
 common/physics_ticks_per_second=30

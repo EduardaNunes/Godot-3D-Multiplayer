@@ -1,7 +1,7 @@
 extends MultiplayerSpawner
 
 @export var playerScene : PackedScene
-#@onready var game_controller : Node2D = $".."
+@onready var spawn_point : Area3D = $"../SpawnPoint"
 
 var spawned_players : Array[bool] = [false, false, false, false]
 var colors = ['green', 'blue', 'yellow', 'red']
@@ -35,8 +35,9 @@ func spawn_player(data):
 	
 	var player = playerScene.instantiate()
 	player.color = data.color
-	#player.position = $"../Spawner".position
+	player.position = spawn_point.position
 	player.name = str(data.id)
+	player.set_collision_mask_value(2, false)
 	player.set_multiplayer_authority(data.id)
 	
 	#if multiplayer.is_server():
