@@ -8,13 +8,13 @@ var direction : Vector3
 @onready var camera: Camera3D = $CameraPosition/Camera3D
 
 @export var color : String
-var animation_direction : Vector3 = Vector3.ZERO
+var animation_direction : Vector3 = Vector3.FORWARD
 
 # ---------------------------------------------------------------------------- #
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
-	
+
 # ---------------------------------------------------------------------------- #
 
 func _physics_process(delta: float) -> void:

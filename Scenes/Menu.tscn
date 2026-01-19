@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dv7gqxjfgklsp"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qlr77"]
+[ext_resource type="Script" uid="uid://ck1etk6fuqj8j" path="res://Scripts/menu.gd" id="1_qlr77"]
 [ext_resource type="PackedScene" uid="uid://dbvg5shpa6ktq" path="res://Scenes/Game.tscn" id="2_idohh"]
 [ext_resource type="FontFile" uid="uid://brgd3gf6diskh" path="res://Assets/Fonts/ThaleahFat.ttf" id="3_3j6ch"]
 [ext_resource type="AudioStream" uid="uid://d2bhuw8rnkhwk" path="res://Assets/Sounds/jump05.wav" id="9_wvbt5"]
