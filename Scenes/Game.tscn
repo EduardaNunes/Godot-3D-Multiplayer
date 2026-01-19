@@ -17,6 +17,7 @@ sky = SubResource("Sky_gl6un")
 tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j5yw3"]
+size = Vector3(3, 2.5184326, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cg2ps"]
 
@@ -38,7 +39,7 @@ collision_mask = 3
 script = ExtResource("1_j5yw3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint"]
-transform = Transform3D(2, 0, 0, 0, 4.2674413, 0, 0, 0, 2.015, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7407837, 0)
 shape = SubResource("BoxShape3D_j5yw3")
 debug_color = Color(0.8862745, 0.29411766, 0.3137255, 1)
 
