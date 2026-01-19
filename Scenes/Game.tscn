@@ -25,7 +25,7 @@ size = Vector3(15.19, 1, 14.22)
 environment = SubResource("Environment_j5yw3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9006148, 0.43461818, 0, -0.43461818, 0.9006148, 0, 5.998393, 8.5046425)
+transform = Transform3D(0.74904823, 0.28794125, -0.5966712, 0, 0.9006148, 0.43461818, 0.66251546, -0.32555, 0.67460394, 0, 5.998393, 8.5046425)
 light_energy = 0.8
 shadow_enabled = true
 
