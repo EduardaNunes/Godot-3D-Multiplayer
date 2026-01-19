@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="DCC148 - Multiplayer 3D"
-run/main_scene="uid://dbvg5shpa6ktq"
+run/main_scene="uid://b81ktx1s238fg"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[editor]
+[autoload]
 
-movie_writer/movie_file="C:/Users/PC12643/Documents/Godot/Godot-3D-Multiplayer/gravacao.avi"
+GlobalMultiplayerNetwork="*res://Scripts/global_multiplayer_network.gd"
 
 [input]
 

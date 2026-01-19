@@ -1,0 +1,247 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv7gqxjfgklsp"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qlr77"]
+[ext_resource type="PackedScene" uid="uid://dbvg5shpa6ktq" path="res://Scenes/Game.tscn" id="2_idohh"]
+[ext_resource type="FontFile" uid="uid://brgd3gf6diskh" path="res://Assets/Fonts/ThaleahFat.ttf" id="3_3j6ch"]
+[ext_resource type="AudioStream" uid="uid://d2bhuw8rnkhwk" path="res://Assets/Sounds/jump05.wav" id="9_wvbt5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idohh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jcrr"]
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("menuButtons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qlr77")
+gameScene = ExtResource("2_idohh")
+menuButtons = [NodePath("Main/Container/VBoxContainer/VBoxContainer/Host"), NodePath("Main/Container/VBoxContainer/VBoxContainer/Client"), NodePath("Main/Container/VBoxContainer/VBoxContainer/Credits"), NodePath("Main/Container/VBoxContainer/VBoxContainer/Exit")]
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 0.78431374)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_idohh")
+
+[node name="Container" type="BoxContainer" parent="Main"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.5
+offset_right = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Main/Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Main/Container/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_3j6ch")
+theme_override_font_sizes/font_size = 50
+text = "Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Main/Container/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Um jogo multiplayer 3D"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Container/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Tutorial" type="Button" parent="Main/Container/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Tutorial"
+
+[node name="Host" type="Button" parent="Main/Container/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Abrir um Servidor"
+
+[node name="Client" type="Button" parent="Main/Container/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Conectar ao Servidor"
+
+[node name="Credits" type="Button" parent="Main/Container/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Créditos"
+
+[node name="Exit" type="Button" parent="Main/Container/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[node name="Error" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3jcrr")
+
+[node name="Container" type="BoxContainer" parent="Error"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.5
+offset_right = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Error/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Error/Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Error/Container/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_3j6ch")
+theme_override_font_sizes/font_size = 50
+text = "Error"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Error/Container/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Informações sobre o erro aqui"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Error/Container/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Ok" type="Button" parent="Error/Container/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ok
+"
+
+[node name="Input_IP" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3jcrr")
+
+[node name="Container" type="BoxContainer" parent="Input_IP"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.5
+offset_right = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Input_IP/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Input_IP/Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Input_IP/Container/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_3j6ch")
+theme_override_font_sizes/font_size = 50
+text = "Conectar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Input_IP/Container/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Insira o IP do host"
+
+[node name="LineEdit" type="LineEdit" parent="Input_IP/Container/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Ok" type="Button" parent="Input_IP/Container/VBoxContainer"]
+layout_mode = 2
+text = "Ok
+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-59.5, 74)
+stream = ExtResource("9_wvbt5")
+volume_db = 10.0
+
+[connection signal="pressed" from="Main/Container/VBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Main/Container/VBoxContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Main/Container/VBoxContainer/VBoxContainer/Client" to="." method="_on_client_pressed"]
+[connection signal="pressed" from="Main/Container/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Main/Container/VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Error/Container/VBoxContainer/VBoxContainer/Ok" to="." method="_on_error_ok_pressed"]
+[connection signal="pressed" from="Input_IP/Container/VBoxContainer/Ok" to="." method="_on_input_ip_ok_pressed"]
