@@ -40,5 +40,7 @@ func throw(direction : Vector3):
 	collision.disabled = false
 	freeze = false
 	apply_impulse(direction * 10)
+	var rotation_vector : Vector3 = direction.rotated(Vector3.UP, deg_to_rad(90))
+	apply_torque(rotation_vector * 3)
 
 # ---------------------------------------------------------------------------- #

@@ -36,10 +36,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8065796, 0)
 shape = SubResource("CapsuleShape3D_obksh")
 
 [node name="CameraPosition" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5553913, 4.0302596)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPosition" node_paths=PackedStringArray("camera_anchor")]
-transform = Transform3D(1, 0, 0, 0, 0.50000006, 0.8660254, 0, -0.86602545, 0.50000006, 0, 6, 3.027366)
+transform = Transform3D(1, 0, 0, 0, 0.50000006, 0.8660254, 0, -0.86602545, 0.50000006, 0, 7.5638785, 4.012788)
 top_level = true
 script = ExtResource("3_po5vt")
 camera_anchor = NodePath("..")
