@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ceokoxq7ew03r" path="res://Scenes/godot_plush_model.tscn" id="1_837kf"]
 [ext_resource type="Script" uid="uid://d270r6phsxe1k" path="res://Scripts/Player_top_down.gd" id="1_obksh"]
 [ext_resource type="Script" uid="uid://bpgjjp7cp0y1" path="res://Scripts/camera_player.gd" id="3_po5vt"]
-[ext_resource type="Script" uid="uid://c276p5o2s824r" path="res://Scripts/Player_hand_script.gd" id="4_sepqe"]
+[ext_resource type="Script" path="res://Scripts/Player_hand_script.gd" id="4_sepqe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obksh"]
 height = 1.6065674
@@ -23,6 +23,8 @@ properties/2/replication_mode = 1
 radius = 2.0
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_obksh")
 
 [node name="godot_plush_model" parent="." instance=ExtResource("1_837kf")]
