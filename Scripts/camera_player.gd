@@ -13,7 +13,7 @@ func _ready() -> void:
 	if not camera_anchor:
 		push_error("Camera anchor not found!")
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var target_position = camera_anchor.get_global_transform_interpolated().origin
 	global_position = global_position.move_toward(target_position, calculate_speed() * delta)
 

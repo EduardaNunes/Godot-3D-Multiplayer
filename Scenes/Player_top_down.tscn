@@ -27,15 +27,19 @@ script = ExtResource("1_obksh")
 
 [node name="godot_plush_model" parent="." instance=ExtResource("1_837kf")]
 
+[node name="HandPosition" type="Marker3D" parent="godot_plush_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92269456, 1.0245242)
+gizmo_extents = 0.5
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8065796, 0)
 shape = SubResource("CapsuleShape3D_obksh")
 
 [node name="CameraPosition" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 3)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPosition" node_paths=PackedStringArray("camera_anchor")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 6, 6)
+transform = Transform3D(1, 0, 0, 0, 0.50000006, 0.8660254, 0, -0.86602545, 0.50000006, 0, 6, 3.027366)
 top_level = true
 script = ExtResource("3_po5vt")
 camera_anchor = NodePath("..")
@@ -49,9 +53,5 @@ script = ExtResource("4_sepqe")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0143763, 0)
 shape = SubResource("CylinderShape3D_po5vt")
-
-[node name="HandPosition" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92269456, 1.0245242)
-gizmo_extents = 0.5
 
 [editable path="godot_plush_model"]
