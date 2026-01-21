@@ -12,6 +12,7 @@ func _ready() -> void:
 	var material : ShaderMaterial = mesh.material_overlay
 	shader_material = material.duplicate()
 	mesh.material_overlay = shader_material
+	set_multiplayer_authority(name.to_int())
 
 # ---------------------------------------------------------------------------- #
 

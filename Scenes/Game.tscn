@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene load_steps=13 format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scripts/spawn_point.gd" id="1_j5yw3"]
 [ext_resource type="Script" uid="uid://llfdc1bty4l5" path="res://Scripts/player_multiplayer_spawner.gd" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://f7pfamv7sljl" path="res://Scenes/Pickable_object.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://kgxpdsbm85oi" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
+[ext_resource type="Script" uid="uid://c7ok2mqc8vk1x" path="res://Scripts/score_controller.gd" id="6_7lihs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -68,20 +69,25 @@ spawn_path = NodePath("..")
 script = ExtResource("2_j5yw3")
 playerScene = ExtResource("1_iukft")
 
-[node name="RigidBody3D2" parent="." instance=ExtResource("3_j5yw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6372795, 1, 0.8798294)
-
-[node name="RigidBody3D3" parent="." instance=ExtResource("3_j5yw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7581171, 1.0000005, 1.9449282)
-
-[node name="RigidBody3D4" parent="." instance=ExtResource("3_j5yw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.587346, 1.0000005, 3.5102477)
-
-[node name="RigidBody3D5" parent="." instance=ExtResource("3_j5yw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0088563, 1.0000005, 3.618701)
-
 [node name="Area3D" parent="." instance=ExtResource("5_b2bpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14589, 0.9849663, 5.69443)
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="RigidBody3D2" parent="Objects" instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6372795, 1, 0.8798294)
+
+[node name="RigidBody3D3" parent="Objects" instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7581171, 1.0000005, 1.9449282)
+
+[node name="RigidBody3D4" parent="Objects" instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.587346, 1.0000005, 3.5102477)
+
+[node name="RigidBody3D5" parent="Objects" instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0088563, 1.0000005, 3.618701)
+
+[node name="ScoreController" type="Node" parent="."]
+script = ExtResource("6_7lihs")
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
 
