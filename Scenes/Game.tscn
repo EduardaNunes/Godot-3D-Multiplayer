@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene load_steps=12 format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scripts/spawn_point.gd" id="1_j5yw3"]
 [ext_resource type="Script" uid="uid://llfdc1bty4l5" path="res://Scripts/player_multiplayer_spawner.gd" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://f7pfamv7sljl" path="res://Scenes/Pickable_object.tscn" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://kgxpdsbm85oi" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -78,6 +79,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.587346, 1.0000005, 3.51024
 
 [node name="RigidBody3D5" parent="." instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0088563, 1.0000005, 3.618701)
+
+[node name="Area3D" parent="." instance=ExtResource("5_b2bpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14589, 0.9849663, 5.69443)
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
 
