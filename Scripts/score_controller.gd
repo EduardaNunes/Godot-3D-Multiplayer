@@ -1,3 +1,4 @@
+class_name ScoreController
 extends Node
 
 signal score_update(new_value : int)

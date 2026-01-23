@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnpicfj5837ee"]
+
+[ext_resource type="Script" uid="uid://csibrcisxueca" path="res://Scripts/pause_main_page.gd" id="1_406x6"]
+[ext_resource type="Script" uid="uid://ch4af7gwpc72w" path="res://Scripts/Config_page_script.gd" id="1_hltfd"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MainPage" type="Control" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_406x6")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MainPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MainPage/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Resume" type="Button" parent="MarginContainer/Panel/MainPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Voltar"
+
+[node name="Config" type="Button" parent="MarginContainer/Panel/MainPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Configurações"
+
+[node name="MainMenu" type="Button" parent="MarginContainer/Panel/MainPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Menu Principal"
+
+[node name="ConfigPage" type="Control" parent="MarginContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hltfd")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ConfigPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/ConfigPage/MarginContainer"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Configurações"
+horizontal_alignment = 1
+
+[node name="Label_Vol_Principal" type="Label" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume principal"
+
+[node name="Slider_Principal" type="HSlider" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_Vol_Musica" type="Label" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume música"
+
+[node name="Slider_Musica" type="HSlider" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_Vol_SFX" type="Label" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume SFX"
+
+[node name="Slider_SFX" type="HSlider" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_Vol_SFX2" type="Label" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tamanho da tela"
+
+[node name="ResolutionButton" type="OptionButton" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
