@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ch4af7gwpc72w" path="res://Scripts/Config_page_script.gd" id="1_hltfd"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -118,3 +119,7 @@ text = "Tamanho da tela"
 
 [node name="ResolutionButton" type="OptionButton" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/Panel/ConfigPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Voltar"

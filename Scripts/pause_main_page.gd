@@ -10,6 +10,7 @@ extends Control
 func _ready() -> void:
 	resume.pressed.connect(pause_menu.hide)
 	config.pressed.connect(show_config)
+	main_menu.pressed.connect(return_to_main_menu)
 	pause_menu.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -21,5 +22,5 @@ func show_config():
 	config_page.show()
 
 func return_to_main_menu():
-	push_error("Method not implemented")
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 	pass

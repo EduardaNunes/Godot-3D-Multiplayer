@@ -4,6 +4,8 @@ extends Control
 @onready var slider_musica: HSlider = $MarginContainer/VBoxContainer/Slider_Musica
 @onready var slider_sfx: HSlider = $MarginContainer/VBoxContainer/Slider_SFX
 @onready var resolution_button: OptionButton = $MarginContainer/VBoxContainer/ResolutionButton
+@onready var back_button: Button = $MarginContainer/VBoxContainer/BackButton
+@onready var main_page: Control = $"../MainPage"
 
 var resolution_dict : Dictionary[String, Vector2i] = {
 	"1920x1080": Vector2i(1920, 1080)
@@ -16,6 +18,7 @@ func _ready() -> void:
 	slider_musica.value_changed.connect(update_vol_musica)
 	slider_sfx.value_changed.connect(update_vol_sfx)
 	resolution_button.item_selected.connect(update_resolution)
+	back_button.pressed.connect(return_to_esc)
 
 # ---------------------------------------------------------------------------- #
 
@@ -43,3 +46,7 @@ func update_resolution(idx : int):
 	get_tree().root.content_scale_size = new_res
 
 # ---------------------------------------------------------------------------- #
+
+func return_to_esc():
+	hide()
+	main_page.show()
