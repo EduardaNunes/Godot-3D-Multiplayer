@@ -1,0 +1,117 @@
+[gd_scene load_steps=38 format=3 uid="uid://b8geq8qco2ckh"]
+
+[ext_resource type="PackedScene" uid="uid://d3v1usqm8tkoo" path="res://Assets/DungeonKit/corridor-corner.glb" id="1_cefx4"]
+[ext_resource type="PackedScene" uid="uid://21q28huov5bq" path="res://Assets/DungeonKit/corridor-end.glb" id="2_w3g15"]
+[ext_resource type="PackedScene" uid="uid://yucundqvd7d0" path="res://Assets/DungeonKit/corridor-intersection.glb" id="3_yyuoh"]
+[ext_resource type="PackedScene" uid="uid://ceajmcyj1bm8g" path="res://Assets/DungeonKit/corridor-junction.glb" id="4_8nmnc"]
+[ext_resource type="PackedScene" uid="uid://b7xnijx0fro0d" path="res://Assets/DungeonKit/corridor-transition.glb" id="5_46j87"]
+[ext_resource type="PackedScene" uid="uid://cuy6k3koocxa0" path="res://Assets/DungeonKit/corridor-wide-corner.glb" id="6_wwmwq"]
+[ext_resource type="PackedScene" uid="uid://bxljdqot5r0ox" path="res://Assets/DungeonKit/corridor-wide-end.glb" id="7_uvwld"]
+[ext_resource type="PackedScene" uid="uid://ntjfn8ablgs8" path="res://Assets/DungeonKit/corridor-wide-intersection.glb" id="8_wufrr"]
+[ext_resource type="PackedScene" uid="uid://deuilv1421cg7" path="res://Assets/DungeonKit/corridor-wide-junction.glb" id="9_5hudw"]
+[ext_resource type="PackedScene" uid="uid://cii3bb61nl4rc" path="res://Assets/DungeonKit/corridor-wide.glb" id="10_rywg5"]
+[ext_resource type="PackedScene" uid="uid://dvn6gaqqbg6bq" path="res://Assets/DungeonKit/corridor.glb" id="11_1f6f4"]
+[ext_resource type="PackedScene" uid="uid://bfuyw8v35dhd8" path="res://Assets/DungeonKit/gate-door-window.glb" id="12_frpi2"]
+[ext_resource type="PackedScene" uid="uid://e8qvhe6an8r3" path="res://Assets/DungeonKit/gate-door.glb" id="13_2guif"]
+[ext_resource type="PackedScene" uid="uid://obu8e512aqdr" path="res://Assets/DungeonKit/gate.glb" id="14_2ymoo"]
+[ext_resource type="PackedScene" uid="uid://bic364ghvfmaw" path="res://Assets/DungeonKit/room-corner.glb" id="15_15bxk"]
+[ext_resource type="PackedScene" uid="uid://dwjs4ug2vjs6v" path="res://Assets/DungeonKit/room-large-variation.glb" id="16_am6fg"]
+[ext_resource type="PackedScene" uid="uid://df1hrn5vsv5n2" path="res://Assets/DungeonKit/room-large.glb" id="17_yw37d"]
+[ext_resource type="PackedScene" uid="uid://bvepkswyck48" path="res://Assets/DungeonKit/room-small-variation.glb" id="18_idbrx"]
+[ext_resource type="PackedScene" uid="uid://b25a3md18ee47" path="res://Assets/DungeonKit/room-small.glb" id="19_5mtts"]
+[ext_resource type="PackedScene" uid="uid://bdud6wnbdsr3p" path="res://Assets/DungeonKit/room-wide-variation.glb" id="20_y4iuv"]
+[ext_resource type="PackedScene" uid="uid://61h3o1nh2fj5" path="res://Assets/DungeonKit/room-wide.glb" id="21_g767y"]
+[ext_resource type="PackedScene" uid="uid://c3wcna35b7hou" path="res://Assets/DungeonKit/stairs-wide.glb" id="22_vm3oh"]
+[ext_resource type="PackedScene" uid="uid://dmdmhw6qnavds" path="res://Assets/DungeonKit/stairs.glb" id="23_qvyp5"]
+[ext_resource type="PackedScene" uid="uid://vex5ddt08dj7" path="res://Assets/DungeonKit/template-corner.glb" id="24_d8bbg"]
+[ext_resource type="PackedScene" uid="uid://betqbiljah257" path="res://Assets/DungeonKit/template-detail.glb" id="25_qi6df"]
+[ext_resource type="PackedScene" uid="uid://bb6ixkeq21rhd" path="res://Assets/DungeonKit/template-floor-big.glb" id="26_1bsqt"]
+[ext_resource type="PackedScene" uid="uid://hqct00cva0nr" path="res://Assets/DungeonKit/template-floor-detail-a.glb" id="27_7ao0y"]
+[ext_resource type="PackedScene" uid="uid://dwo1el8ta576b" path="res://Assets/DungeonKit/template-floor-detail.glb" id="28_2pyyg"]
+[ext_resource type="PackedScene" uid="uid://cr58wbxfjm3ti" path="res://Assets/DungeonKit/template-floor-layer-raised.glb" id="29_p7gkm"]
+[ext_resource type="PackedScene" uid="uid://c3w5yj0u222rp" path="res://Assets/DungeonKit/template-floor-layer.glb" id="30_61ilx"]
+[ext_resource type="PackedScene" uid="uid://sqtllasv5mik" path="res://Assets/DungeonKit/template-floor.glb" id="31_18y5i"]
+[ext_resource type="PackedScene" uid="uid://b22b5oa42qqrl" path="res://Assets/DungeonKit/template-wall-corner.glb" id="32_rn0eh"]
+[ext_resource type="PackedScene" uid="uid://byx37luihkxdr" path="res://Assets/DungeonKit/template-wall-detail-a.glb" id="33_srmm1"]
+[ext_resource type="PackedScene" uid="uid://b2iud211g3wgg" path="res://Assets/DungeonKit/template-wall-half.glb" id="34_4r4l1"]
+[ext_resource type="PackedScene" uid="uid://dcrhvkjvwpjvl" path="res://Assets/DungeonKit/template-wall-stairs.glb" id="35_b5dwq"]
+[ext_resource type="PackedScene" uid="uid://dtkfn0ubn7lu4" path="res://Assets/DungeonKit/template-wall-top.glb" id="36_yg8gk"]
+[ext_resource type="PackedScene" uid="uid://car5q7qm0ptx2" path="res://Assets/DungeonKit/template-wall.glb" id="37_hd1yd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="corridor-corner2" parent="." instance=ExtResource("1_cefx4")]
+visible = false
+
+[node name="corridor-end2" parent="." instance=ExtResource("2_w3g15")]
+visible = false
+
+[node name="corridor-intersection2" parent="." instance=ExtResource("3_yyuoh")]
+
+[node name="corridor-junction2" parent="." instance=ExtResource("4_8nmnc")]
+
+[node name="corridor-transition2" parent="." instance=ExtResource("5_46j87")]
+
+[node name="corridor-wide-corner2" parent="." instance=ExtResource("6_wwmwq")]
+
+[node name="corridor-wide-end2" parent="." instance=ExtResource("7_uvwld")]
+
+[node name="corridor-wide-intersection2" parent="." instance=ExtResource("8_wufrr")]
+
+[node name="corridor-wide-junction2" parent="." instance=ExtResource("9_5hudw")]
+
+[node name="corridor-wide2" parent="." instance=ExtResource("10_rywg5")]
+
+[node name="corridor2" parent="." instance=ExtResource("11_1f6f4")]
+
+[node name="gate-door-window2" parent="." instance=ExtResource("12_frpi2")]
+
+[node name="gate-door2" parent="." instance=ExtResource("13_2guif")]
+
+[node name="gate2" parent="." instance=ExtResource("14_2ymoo")]
+
+[node name="room-corner2" parent="." instance=ExtResource("15_15bxk")]
+
+[node name="room-large-variation2" parent="." instance=ExtResource("16_am6fg")]
+
+[node name="room-large2" parent="." instance=ExtResource("17_yw37d")]
+
+[node name="room-small-variation2" parent="." instance=ExtResource("18_idbrx")]
+
+[node name="room-small2" parent="." instance=ExtResource("19_5mtts")]
+
+[node name="room-wide-variation2" parent="." instance=ExtResource("20_y4iuv")]
+
+[node name="room-wide2" parent="." instance=ExtResource("21_g767y")]
+
+[node name="stairs-wide2" parent="." instance=ExtResource("22_vm3oh")]
+
+[node name="stairs2" parent="." instance=ExtResource("23_qvyp5")]
+
+[node name="template-corner2" parent="." instance=ExtResource("24_d8bbg")]
+
+[node name="template-detail2" parent="." instance=ExtResource("25_qi6df")]
+
+[node name="template-floor-big2" parent="." instance=ExtResource("26_1bsqt")]
+
+[node name="template-floor-detail-a2" parent="." instance=ExtResource("27_7ao0y")]
+
+[node name="template-floor-detail2" parent="." instance=ExtResource("28_2pyyg")]
+
+[node name="template-floor-layer-raised2" parent="." instance=ExtResource("29_p7gkm")]
+
+[node name="template-floor-layer2" parent="." instance=ExtResource("30_61ilx")]
+
+[node name="template-floor2" parent="." instance=ExtResource("31_18y5i")]
+
+[node name="template-wall-corner2" parent="." instance=ExtResource("32_rn0eh")]
+
+[node name="template-wall-detail-a2" parent="." instance=ExtResource("33_srmm1")]
+
+[node name="template-wall-half2" parent="." instance=ExtResource("34_4r4l1")]
+
+[node name="template-wall-stairs2" parent="." instance=ExtResource("35_b5dwq")]
+
+[node name="template-wall-top2" parent="." instance=ExtResource("36_yg8gk")]
+
+[node name="template-wall2" parent="." instance=ExtResource("37_hd1yd")]

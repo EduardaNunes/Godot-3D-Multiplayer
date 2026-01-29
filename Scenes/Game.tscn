@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene load_steps=15 format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scripts/spawn_point.gd" id="1_j5yw3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kgxpdsbm85oi" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
 [ext_resource type="Script" uid="uid://c7ok2mqc8vk1x" path="res://Scripts/score_controller.gd" id="6_7lihs"]
 [ext_resource type="Script" uid="uid://pjk1rxvavb7x" path="res://Scripts/Score_label.gd" id="7_fgofq"]
+[ext_resource type="MeshLibrary" uid="uid://c0vtlopp3avdd" path="res://Tileset_MeshLibrary.tres" id="8_2irst"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -100,6 +101,13 @@ offset_bottom = 97.0
 theme_override_font_sizes/font_size = 71
 text = "0"
 script = ExtResource("7_fgofq")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("8_2irst")
+cell_size = Vector3(8, 8, 8)
+data = {
+"cells": PackedInt32Array(65533, 0, 1245189, 65532, 0, 1179653, 65530, 0, 1179653, 65529, 0, 1114117, 65532, 65535, 1048581)
+}
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
 
