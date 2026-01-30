@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://clqqdsmoojokc"]
 
 [ext_resource type="Script" uid="uid://c7yxlhwrdd7ur" path="res://Scenes/monster.gd" id="1_yyra8"]
+[ext_resource type="Script" uid="uid://ptcqntpamtoy" path="res://Scripts/monster_vision_area.gd" id="2_brqr3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wqfq0"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i6tiu"]
 
@@ -11,8 +15,15 @@ properties/0/path = NodePath(".:global_position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yyra8"]
+points = PackedVector3Array(-5, 0, -5, 0, 0, 0, 5, 0, -5)
+
 [node name="Monster" type="CharacterBody3D" unique_id=1166806044]
 script = ExtResource("1_yyra8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=984854757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4592135, -0.38726413)
+mesh = SubResource("BoxMesh_wqfq0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=465904391]
 mesh = SubResource("CapsuleMesh_i6tiu")
@@ -24,3 +35,18 @@ shape = SubResource("CapsuleShape3D_yyra8")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=544060929]
 replication_config = SubResource("SceneReplicationConfig_yyra8")
+
+[node name="VisionArea" type="Area3D" parent="." unique_id=618113294]
+collision_mask = 3
+script = ExtResource("2_brqr3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea" unique_id=1192286002]
+shape = SubResource("ConvexPolygonShape3D_yyra8")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=311252254]
+target_position = Vector3(0, 0, -5)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5
+
+[connection signal="body_entered" from="VisionArea" to="VisionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="VisionArea" to="VisionArea" method="_on_body_exited"]
