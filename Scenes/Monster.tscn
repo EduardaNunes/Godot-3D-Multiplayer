@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://clqqdsmoojokc"]
+
+[ext_resource type="Script" uid="uid://c7yxlhwrdd7ur" path="res://Scenes/monster.gd" id="1_yyra8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i6tiu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yyra8"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_yyra8"]
+properties/0/path = NodePath(".:global_position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Monster" type="CharacterBody3D" unique_id=1166806044]
+script = ExtResource("1_yyra8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=465904391]
+mesh = SubResource("CapsuleMesh_i6tiu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=13895989]
+shape = SubResource("CapsuleShape3D_yyra8")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1326144925]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=544060929]
+replication_config = SubResource("SceneReplicationConfig_yyra8")
