@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scenes/spawn_point.gd" id="1_j5yw3"]
 [ext_resource type="Script" uid="uid://llfdc1bty4l5" path="res://Scripts/player_multiplayer_spawner.gd" id="2_j5yw3"]
+[ext_resource type="Script" uid="uid://dhtlqbhqfyku8" path="res://Scenes/monster_test.gd" id="4_kldst"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,51 +21,82 @@ tonemap_mode = 2
 size = Vector3(3, 2.5184326, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cg2ps"]
+size = Vector3(15, 1, 15)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gl6un"]
 size = Vector3(15.19, 1, 14.22)
 
-[node name="Game" type="Node3D"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_b2bpf"]
+vertices = PackedVector3Array(-7, 0.5, -7, -7, 0.5, 7, 7, 0.5, 7, 7, 0.5, -7)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[sub_resource type="PlaneMesh" id="PlaneMesh_7lihs"]
+size = Vector2(15, 15)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fgofq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2irst"]
+
+[node name="Game" type="Node3D" unique_id=1664420514]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=43559053]
 environment = SubResource("Environment_j5yw3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=506782810]
 transform = Transform3D(0.74904823, 0.28794125, -0.5966712, 0, 0.9006148, 0.43461818, 0.66251546, -0.32555, 0.67460394, 0, 5.998393, 8.5046425)
 light_energy = 0.8
 shadow_enabled = true
 
-[node name="SpawnPoint" type="Area3D" parent="."]
+[node name="SpawnPoint" type="Area3D" parent="." unique_id=982875245]
 collision_mask = 3
 script = ExtResource("1_j5yw3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint" unique_id=473512388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7407837, 0)
 shape = SubResource("BoxShape3D_j5yw3")
 debug_color = Color(0.8862745, 0.29411766, 0.3137255, 1)
 
-[node name="RigidBody3D" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="." unique_id=300225116]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(15.144607, 0, 0, 0, 1, 0, 0, 0, 14.256555, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1875315069]
 mesh = SubResource("BoxMesh_cg2ps")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1627482995]
 shape = SubResource("BoxShape3D_gl6un")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_iukft")]
+[node name="CharacterBody3D" parent="." unique_id=1385959632 instance=ExtResource("1_iukft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9957314, 0.5114968, -0.4232912)
 visible = false
 
 [node name="AnimationPlayer" parent="CharacterBody3D/godot_plush_model" index="1"]
-autoplay = ""
+autoplay = &""
 
-[node name="PlayerMultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="PlayerMultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1297510208]
 _spawnable_scenes = PackedStringArray("uid://crueferqv15rv")
 spawn_path = NodePath("..")
 script = ExtResource("2_j5yw3")
 playerScene = ExtResource("1_iukft")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1419991044]
+navigation_mesh = SubResource("NavigationMesh_b2bpf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=106743299]
+mesh = SubResource("PlaneMesh_7lihs")
+
+[node name="MonsterTest" type="CharacterBody3D" parent="." unique_id=1980357346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.048, 3, 0)
+script = ExtResource("4_kldst")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MonsterTest" unique_id=594191068]
+shape = SubResource("CapsuleShape3D_fgofq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MonsterTest" unique_id=1021284290]
+mesh = SubResource("CapsuleMesh_2irst")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="MonsterTest" unique_id=2057146981]
+path_height_offset = -1.0
+debug_enabled = true
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
 
