@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var vision_area : Area3D = $VisionArea
-@export var speed: float = 3.0
+@export var speed: float = 4.0
 @export var gravity: float = 9.8
 
 var follow_points: Array[Node]

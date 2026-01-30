@@ -200,7 +200,7 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.104733, 0, 26.109423)
 
 [node name="Monster" parent="." unique_id=1166806044 instance=ExtResource("9_71axn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6490016, 4.2127867, 25.004696)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.50825, 4.2127867, 36.33197)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=826105250]
 navigation_mesh = SubResource("NavigationMesh_dahhg")
