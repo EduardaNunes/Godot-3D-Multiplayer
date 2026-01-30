@@ -9,22 +9,6 @@
 [ext_resource type="Script" uid="uid://c7ok2mqc8vk1x" path="res://Scripts/score_controller.gd" id="6_7lihs"]
 [ext_resource type="Script" path="res://Scripts/Score_label.gd" id="7_fgofq"]
 [ext_resource type="MeshLibrary" uid="uid://dwacmc6t3bltu" path="res://Mesh/TileSet_Collisions.tres" id="8_2irst"]
-[ext_resource type="PackedScene" uid="uid://bk8sty1joi5r3" path="res://Assets/Decoracao/barrel_small.gltf" id="11_356ba"]
-[ext_resource type="PackedScene" uid="uid://cq75xqva4lq21" path="res://Assets/Decoracao/barrel_small_stack.gltf" id="12_i4lct"]
-[ext_resource type="PackedScene" uid="uid://b7w6scanqo4h1" path="res://Assets/Decoracao/bottle_A_green.gltf" id="14_i1pr2"]
-[ext_resource type="PackedScene" uid="uid://doghyiavbjrhy" path="res://Assets/Decoracao/bottle_B_brown.gltf" id="15_4f4ik"]
-[ext_resource type="PackedScene" uid="uid://qmseiocl0eng" path="res://Assets/Decoracao/box_large.gltf" id="16_khs3t"]
-[ext_resource type="PackedScene" uid="uid://dg6i21qaerr1j" path="res://Assets/Decoracao/box_small.gltf" id="17_0iyqm"]
-[ext_resource type="PackedScene" uid="uid://bmk2rypeuqmxc" path="res://Assets/Decoracao/box_small_decorated.gltf" id="18_jn8rg"]
-[ext_resource type="PackedScene" uid="uid://wpy0hpaatgct" path="res://Assets/Decoracao/chair.gltf" id="19_umnjm"]
-[ext_resource type="PackedScene" uid="uid://btvq73dbytk6r" path="res://Assets/Decoracao/chest.gltf" id="20_4eqlp"]
-[ext_resource type="PackedScene" uid="uid://2xglcfsjp51c" path="res://Assets/Decoracao/chest_gold.gltf" id="21_18uti"]
-[ext_resource type="PackedScene" uid="uid://psmfn4ktepf8" path="res://Assets/Decoracao/coin_stack_small.gltf" id="22_khy6b"]
-[ext_resource type="PackedScene" uid="uid://dspxyt2d7onbe" path="res://Assets/Decoracao/crates_stacked.gltf" id="23_pti6k"]
-[ext_resource type="PackedScene" uid="uid://x0qe5s8uvcc3" path="res://Assets/Decoracao/keg.gltf" id="24_lmarx"]
-[ext_resource type="PackedScene" uid="uid://cawiwxe1wa3j4" path="res://Assets/Decoracao/stool.gltf" id="25_7av8l"]
-[ext_resource type="PackedScene" uid="uid://dgdpw8eg42q0w" path="res://Assets/Decoracao/table_long.gltf" id="26_dctr5"]
-[ext_resource type="PackedScene" uid="uid://coc44g1pgup8q" path="res://Assets/Decoracao/trunk_large_A.gltf" id="27_mi7vx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -90,6 +74,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2737522, 1.0000005, 1.12589
 [node name="RigidBody3D5" parent="Objects" unique_id=2090723256 instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0088563, 1.0000005, 3.618701)
 
+[node name="RigidBody3D6" parent="Objects" unique_id=881143677 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99409676, 1.0000005, -5.015812)
+
+[node name="RigidBody3D7" parent="Objects" unique_id=1563310829 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5123215, 1.0000005, -7.6871376)
+
+[node name="RigidBody3D8" parent="Objects" unique_id=542350002 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7771244, 1.0000014, -11.788847)
+
+[node name="RigidBody3D9" parent="Objects" unique_id=136832195 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7195091, 1.0000014, -16.790358)
+
+[node name="RigidBody3D10" parent="Objects" unique_id=685296714 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75214, 1.0000005, -15.392618)
+
+[node name="RigidBody3D11" parent="Objects" unique_id=483053753 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4739685, 1.0000005, -7.716509)
+
+[node name="RigidBody3D12" parent="Objects" unique_id=1948370346 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.117655, 0.9999995, -11.899797)
+
+[node name="RigidBody3D13" parent="Objects" unique_id=126501920 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4851, 0.9999995, -11.222055)
+
+[node name="RigidBody3D14" parent="Objects" unique_id=1280300220 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.964396, 0.9999995, -12.995731)
+
+[node name="RigidBody3D15" parent="Objects" unique_id=665473199 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.04298, 0.9999995, -9.392565)
+
+[node name="RigidBody3D16" parent="Objects" unique_id=2046055975 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.85127, 0.9999995, -9.506918)
+
+[node name="RigidBody3D17" parent="Objects" unique_id=1268882259 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.516653, 0.9999995, -12.371214)
+
 [node name="ScoreController" type="Node" parent="." unique_id=689627413]
 unique_name_in_owner = true
 script = ExtResource("6_7lihs")
@@ -118,53 +138,5 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=249893860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.104733, 0, 26.109423)
-
-[node name="barrel_small2" parent="." unique_id=213903567 instance=ExtResource("11_356ba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.83022, 1.9999995, 44.94685)
-
-[node name="barrel_small_stack2" parent="." unique_id=460766773 instance=ExtResource("12_i4lct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.225758, 2.000001, 42.11982)
-
-[node name="bottle_A_green2" parent="." unique_id=1522320132 instance=ExtResource("14_i1pr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.576283, 1.999999, 43.415592)
-
-[node name="bottle_B_brown2" parent="." unique_id=1861548054 instance=ExtResource("15_4f4ik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.210928, 2, 44.343628)
-
-[node name="box_large2" parent="." unique_id=2093796978 instance=ExtResource("16_khs3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.54286, 1.999999, 35.819427)
-
-[node name="box_small2" parent="." unique_id=1045367414 instance=ExtResource("17_0iyqm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.067333, 2, 28.550522)
-
-[node name="box_small_decorated2" parent="." unique_id=1635285231 instance=ExtResource("18_jn8rg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.103752, 2.0000005, 30.221207)
-
-[node name="chair2" parent="." unique_id=397907461 instance=ExtResource("19_umnjm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.404467, 2, 40.44467)
-
-[node name="chest2" parent="." unique_id=1620932671 instance=ExtResource("20_4eqlp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.077053, 2.0000002, 37.874886)
-
-[node name="chest_gold2" parent="." unique_id=519387630 instance=ExtResource("21_18uti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.584257, 1.9999993, 29.959085)
-
-[node name="coin_stack_small2" parent="." unique_id=722101615 instance=ExtResource("22_khy6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.54508, 2.0000005, 44.197857)
-
-[node name="crates_stacked2" parent="." unique_id=343715012 instance=ExtResource("23_pti6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.364616, 2.000004, 30.029581)
-
-[node name="keg2" parent="." unique_id=778829930 instance=ExtResource("24_lmarx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8199, 2, 26.022722)
-
-[node name="stool2" parent="." unique_id=1695609840 instance=ExtResource("25_7av8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.899698, 1.999999, 25.80328)
-
-[node name="table_long2" parent="." unique_id=442233507 instance=ExtResource("26_dctr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.21068, 2.000001, 32.977856)
-
-[node name="trunk_large_A2" parent="." unique_id=1654790889 instance=ExtResource("27_mi7vx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.27907, 2.0000002, 23.673805)
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
