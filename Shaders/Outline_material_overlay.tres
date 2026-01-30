@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cher62svvssyn"]
+
+[ext_resource type="Shader" uid="uid://dt8udqcmybvqw" path="res://Shaders/Outline.gdshader" id="1_mxgtk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mxgtk")
+shader_parameter/color = Color(0, 1, 0.116666794, 1)
+shader_parameter/size = 1.0999999977648
+shader_parameter/renderOutline = false

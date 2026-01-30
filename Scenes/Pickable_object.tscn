@@ -1,18 +1,8 @@
 [gd_scene format=3 uid="uid://f7pfamv7sljl"]
 
-[ext_resource type="Shader" uid="uid://dt8udqcmybvqw" path="res://Shaders/Outline.gdshader" id="1_mu8rr"]
 [ext_resource type="Script" uid="uid://b33yqnjhbc6kq" path="res://Scripts/Pickable_object.gd" id="1_x4qa7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3kb23"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x4qa7"]
-render_priority = 0
-shader = ExtResource("1_mu8rr")
-shader_parameter/color = Color(0, 1, 0.116666794, 1)
-shader_parameter/size = 1.0999999977648
-shader_parameter/renderOutline = false
-
-[sub_resource type="BoxMesh" id="BoxMesh_3kb23"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_x4qa7"]
 properties/0/path = NodePath(".:global_position")
@@ -22,15 +12,20 @@ properties/1/path = NodePath(".:global_rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
+[sub_resource type="BoxMesh" id="BoxMesh_mu8rr"]
+
 [node name="RigidBody3D" type="RigidBody3D" unique_id=881143677]
 script = ExtResource("1_x4qa7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=448002456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_3kb23")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=565102492]
-material_overlay = SubResource("ShaderMaterial_x4qa7")
-mesh = SubResource("BoxMesh_3kb23")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1321345404]
 replication_config = SubResource("SceneReplicationConfig_x4qa7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=604124496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_mu8rr")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=241522998]

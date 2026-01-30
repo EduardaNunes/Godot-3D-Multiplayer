@@ -3,15 +3,40 @@ extends RigidBody3D
 
 var price : int = 1
 var shader_material : ShaderMaterial = null
-@onready var mesh: MeshInstance3D = $MeshInstance3D
+var mesh : MeshInstance3D = null
 @onready var collision: CollisionShape3D = $CollisionShape3D
 #wdd@onready var objects_pool : Node3D = self.get_parent()
+const OUTLINE_MATERIAL_OVERLAY = preload("uid://cher62svvssyn")
+
+@export var mesh_list : Array[StringName] = [
+	"res://Assets/Decoracao/barrel_small.gltf",
+	"res://Assets/Decoracao/barrel_small_stack.gltf",
+	"res://Assets/Decoracao/bottle_A_green.gltf",
+	"res://Assets/Decoracao/bottle_A_brown.gltf",
+	"res://Assets/Decoracao/bottle_B_brown.gltf",
+	"res://Assets/Decoracao/bottle_B_green.gltf",
+	"res://Assets/Decoracao/box_large.gltf",
+	"res://Assets/Decoracao/box_small.gltf",
+	"res://Assets/Decoracao/box_small_decorated.gltf",
+	"res://Assets/Decoracao/chair.gltf",
+	"res://Assets/Decoracao/chest.gltf",
+	"res://Assets/Decoracao/chest_gold.gltf",
+	"res://Assets/Decoracao/coin_stack_medium.gltf",
+	"res://Assets/Decoracao/coin_stack_small.gltf",
+	"res://Assets/Decoracao/crates_stacked.gltf"
+]
 
 # ---------------------------------------------------------------------------- #
 
 func _ready() -> void:
-	var material : ShaderMaterial = mesh.material_overlay
-	shader_material = material.duplicate()
+	$MeshInstance3D.queue_free()
+	var mesh_scene_path = mesh_list.pick_random()
+	var mesh_scene : PackedScene = load(mesh_scene_path)
+	var mesh_scene_node = mesh_scene.instantiate()
+	add_child(mesh_scene_node)
+	
+	mesh = mesh_scene_node.get_child(0)
+	shader_material = OUTLINE_MATERIAL_OVERLAY.duplicate()
 	mesh.material_overlay = shader_material
 	set_multiplayer_authority(name.to_int())
 
