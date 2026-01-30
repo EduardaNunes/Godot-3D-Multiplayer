@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnpicfj5837ee"]
+[gd_scene load_steps=3 format=3 uid="uid://c22q5e8smutqc"]
 
-[ext_resource type="Script" uid="uid://csibrcisxueca" path="res://Scripts/pause_main_page.gd" id="1_406x6"]
-[ext_resource type="Script" uid="uid://ch4af7gwpc72w" path="res://Scripts/Config_page_script.gd" id="1_hltfd"]
+[ext_resource type="Script" path="res://Scripts/pause_main_page.gd" id="1_406x6"]
+[ext_resource type="Script" path="res://Scripts/Config_page_script.gd" id="1_hltfd"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = 2
