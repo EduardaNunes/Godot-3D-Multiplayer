@@ -6,7 +6,7 @@ var shader_material : ShaderMaterial = null
 var mesh : MeshInstance3D = null
 @onready var collision: CollisionShape3D = $CollisionShape3D
 #wdd@onready var objects_pool : Node3D = self.get_parent()
-const OUTLINE_MATERIAL_OVERLAY = preload("uid://cher62svvssyn")
+const OUTLINE_MATERIAL_OVERLAY = preload("res://Shaders/Outline_material_overlay.tres")
 
 @export var mesh_list : Array[StringName] = [
 	"res://Assets/Decoracao/barrel_small.gltf",
