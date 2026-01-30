@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scripts/spawn_point.gd" id="1_2irst"]
+[ext_resource type="Script" uid="uid://dab4hcjs23fl5" path="res://Scripts/game_controller.gd" id="1_bf53h"]
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://llfdc1bty4l5" path="res://Scripts/player_multiplayer_spawner.gd" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://f7pfamv7sljl" path="res://Scenes/Pickable_object.tscn" id="3_j5yw3"]
@@ -28,6 +29,7 @@ tonemap_mode = 2
 size = Vector3(3, 2.5184326, 3)
 
 [node name="Game" type="Node3D" unique_id=773658705]
+script = ExtResource("1_bf53h")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1285053928]
 environment = SubResource("Environment_j5yw3")
