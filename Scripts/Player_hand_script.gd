@@ -57,13 +57,13 @@ func set_focus_on_nearest_object():
 # ---------------------------------------------------------------------------- #
 
 func pick_focus_item():
-	focus_object.pick_up(hand_node)
+	focus_object.pick_up.rpc(hand_node.get_path())
 	picked_object = focus_object
 
 # ---------------------------------------------------------------------------- #
 
 func throw_item(direction : Vector3):
-	picked_object.throw(direction)
+	picked_object.throw.rpc(direction)
 	picked_object = null
 
 # ---------------------------------------------------------------------------- #
