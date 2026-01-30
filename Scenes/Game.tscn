@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scripts/spawn_point.gd" id="1_2irst"]
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://llfdc1bty4l5" path="res://Scripts/player_multiplayer_spawner.gd" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://f7pfamv7sljl" path="res://Scenes/Pickable_object.tscn" id="3_j5yw3"]
-[ext_resource type="PackedScene" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://kgxpdsbm85oi" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
 [ext_resource type="Script" uid="uid://c7ok2mqc8vk1x" path="res://Scripts/score_controller.gd" id="6_7lihs"]
 [ext_resource type="Script" uid="uid://pjk1rxvavb7x" path="res://Scripts/Score_label.gd" id="7_fgofq"]
-[ext_resource type="AudioStream" uid="uid://bc3b2dbq5wrqq" path="res://Assets/Music/PerituneMaterial_Gothic_Cute_inst(chosic.com).mp3" id="8_2irst"]
-[ext_resource type="MeshLibrary" uid="uid://c0vtlopp3avdd" path="res://Tileset_MeshLibrary.tres" id="8_2irst"]
+[ext_resource type="MeshLibrary" uid="uid://dwacmc6t3bltu" path="res://Mesh/TileSet_Collisions.tres" id="8_2irst"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,8 +17,11 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_iukft")
 
 [sub_resource type="Environment" id="Environment_j5yw3"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.025963396, 0.0042680907, 0.13615936, 1)
 sky = SubResource("Sky_gl6un")
+ambient_light_source = 3
+reflected_light_source = 2
 tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j5yw3"]
@@ -35,12 +37,13 @@ size = Vector3(3, 2.5184326, 3)
 environment = SubResource("Environment_j5yw3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=851946954]
-transform = Transform3D(0.74904823, 0.28794125, -0.5966712, 0, 0.9006148, 0.43461818, 0.66251546, -0.32555, 0.67460394, 0, 5.998393, 8.5046425)
+transform = Transform3D(0.74904823, 0.28794125, -0.5966713, 0, 0.9006148, 0.4346182, 0.66251546, -0.32555, 0.674604, 26.389708, 5.998393, 29.448595)
 light_energy = 0.8
 light_indirect_energy = 0.8
 shadow_enabled = true
 
 [node name="SpawnPoint" type="Area3D" parent="." unique_id=1709510683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.240105, 1.8186054, 27.536392)
 collision_mask = 3
 script = ExtResource("1_2irst")
 
@@ -104,15 +107,16 @@ text = "0"
 script = ExtResource("7_fgofq")
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1420233266]
-stream = ExtResource("8_2irst")
 volume_db = -20.0
 autoplay = true
-[node name="GridMap" type="GridMap" parent="."]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=2046556023]
 mesh_library = ExtResource("8_2irst")
 cell_size = Vector3(4, 4, 4)
 data = {
-"cells": PackedInt32Array(5, 6, 1441807, 1, 6, 655364, 0, 6, 6, 5, 9, 13, 5, 3, 1441795, 5, 2, 1441795, 5, 1, 1441795, 5, 0, 1441795, 6, 2, 1441794, 6, 1, 1441794, 6, 0, 1441794, 7, 0, 1441794, 7, 1, 1441794, 7, 2, 1441794, 8, 2, 1441794, 8, 1, 1441794, 8, 0, 1441794, 9, 2, 1048579, 9, 1, 1048579, 9, 0, 1048579, 9, 65535, 1048576, 5, 65535, 655360, 9, 3, 0, 8, 3, 3, 7, 3, 3, 6, 3, 3, 6, 65535, 655363, 7, 65535, 655363, 8, 65535, 655363, 8, 6, 655370, 9, 6, 655370, 10, 6, 655363, 11, 6, 655370, 12, 6, 655370, 13, 6, 655370, 14, 6, 3, 15, 6, 10, 16, 6, 10, 17, 6, 655363, 18, 6, 655361, 10, 7, 1048586, 14, 5, 1048586, 17, 7, 1048586, 10, 10, 1048592, 17, 10, 1048592, 14, 3, 1048594, 13, 3, 1441795, 15, 3, 1048579, 14, 2, 655363, 19, 10, 1048579, 15, 10, 1441795, 17, 12, 3, 10, 12, 3, 8, 10, 1441795, 12, 10, 1048579)
+"cells": PackedInt32Array(5, 6, 1441807, 1, 6, 655364, 0, 6, 6, 5, 3, 1441795, 5, 2, 1441795, 5, 1, 1441795, 5, 0, 1441795, 6, 2, 1441794, 6, 1, 1441794, 6, 0, 1441794, 7, 0, 1441794, 7, 1, 1441794, 7, 2, 1441794, 8, 2, 1441794, 8, 1, 1441794, 8, 0, 1441794, 9, 2, 1048579, 9, 1, 1048579, 9, 0, 1048579, 9, 65535, 1048576, 5, 65535, 655360, 9, 3, 0, 8, 3, 3, 7, 3, 3, 6, 3, 3, 6, 65535, 655363, 7, 65535, 655363, 8, 65535, 655363, 8, 6, 655370, 9, 6, 655370, 10, 6, 655363, 11, 6, 655370, 12, 6, 655370, 13, 6, 655370, 14, 6, 3, 15, 6, 10, 16, 6, 10, 17, 6, 655363, 18, 6, 655361, 10, 7, 1048586, 14, 5, 1048586, 17, 7, 1048586, 10, 10, 1048592, 17, 10, 1048592, 14, 3, 1048594, 13, 3, 1441795, 15, 3, 1048579, 14, 2, 655363, 19, 10, 1048579, 15, 10, 1441795, 17, 12, 3, 10, 12, 3, 8, 10, 1441795, 12, 10, 1048579, 5, 10, 14, 4, 10, 655383)
 }
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
 
