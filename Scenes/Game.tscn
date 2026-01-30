@@ -104,6 +104,8 @@ script = ExtResource("7_fgofq")
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_2irst")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
 
