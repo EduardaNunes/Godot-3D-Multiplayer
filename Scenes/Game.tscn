@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene format=3 uid="uid://dbvg5shpa6ktq"]
 
+[ext_resource type="Script" path="res://Scripts/spawn_point.gd" id="1_2irst"]
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
-[ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scripts/spawn_point.gd" id="1_j5yw3"]
 [ext_resource type="Script" uid="uid://llfdc1bty4l5" path="res://Scripts/player_multiplayer_spawner.gd" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://f7pfamv7sljl" path="res://Scenes/Pickable_object.tscn" id="3_j5yw3"]
-[ext_resource type="PackedScene" uid="uid://kgxpdsbm85oi" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
-[ext_resource type="Script" uid="uid://c7ok2mqc8vk1x" path="res://Scripts/score_controller.gd" id="6_7lihs"]
+[ext_resource type="PackedScene" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
+[ext_resource type="Script" path="res://Scripts/score_controller.gd" id="6_7lihs"]
 [ext_resource type="Script" path="res://Scripts/Score_label.gd" id="7_fgofq"]
 [ext_resource type="AudioStream" uid="uid://bc3b2dbq5wrqq" path="res://Assets/Music/PerituneMaterial_Gothic_Cute_inst(chosic.com).mp3" id="8_2irst"]
 
@@ -28,73 +28,73 @@ size = Vector3(3, 2.5184326, 3)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_j5yw3"]
 
-[node name="Game" type="Node3D"]
+[node name="Game" type="Node3D" unique_id=773658705]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1285053928]
 environment = SubResource("Environment_j5yw3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=851946954]
 transform = Transform3D(0.74904823, 0.28794125, -0.5966712, 0, 0.9006148, 0.43461818, 0.66251546, -0.32555, 0.67460394, 0, 5.998393, 8.5046425)
 light_energy = 0.8
 light_indirect_energy = 0.8
 shadow_enabled = true
 
-[node name="SpawnPoint" type="Area3D" parent="."]
+[node name="SpawnPoint" type="Area3D" parent="." unique_id=1709510683]
 collision_mask = 3
-script = ExtResource("1_j5yw3")
+script = ExtResource("1_2irst")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint" unique_id=1532581013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7407837, 0)
 shape = SubResource("BoxShape3D_j5yw3")
 debug_color = Color(0.8862745, 0.29411766, 0.3137255, 1)
 
-[node name="RigidBody3D" type="StaticBody3D" parent="."]
+[node name="RigidBody3D" type="StaticBody3D" parent="." unique_id=894363704]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=232868264]
 transform = Transform3D(15.144607, 0, 0, 0, 1, 0, 0, 0, 14.256555, 0, 0, 0)
 mesh = SubResource("BoxMesh_cg2ps")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=267161674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48496628, 0)
 shape = SubResource("WorldBoundaryShape3D_j5yw3")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_iukft")]
+[node name="CharacterBody3D" parent="." unique_id=273355509 instance=ExtResource("1_iukft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9957314, 0.5114968, -0.4232912)
 
 [node name="AnimationPlayer" parent="CharacterBody3D/godot_plush_model" index="1"]
-autoplay = ""
+autoplay = &""
 
-[node name="PlayerMultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="PlayerMultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=119075211]
 _spawnable_scenes = PackedStringArray("uid://crueferqv15rv")
 spawn_path = NodePath("..")
 script = ExtResource("2_j5yw3")
 playerScene = ExtResource("1_iukft")
 
-[node name="Area3D" parent="." instance=ExtResource("5_b2bpf")]
+[node name="Area3D" parent="." unique_id=1887378593 instance=ExtResource("5_b2bpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14589, 0.9849663, 5.69443)
 
-[node name="Objects" type="Node3D" parent="."]
+[node name="Objects" type="Node3D" parent="." unique_id=183678008]
 
-[node name="RigidBody3D2" parent="Objects" instance=ExtResource("3_j5yw3")]
+[node name="RigidBody3D2" parent="Objects" unique_id=367045142 instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6372795, 1, 0.8798294)
 
-[node name="RigidBody3D3" parent="Objects" instance=ExtResource("3_j5yw3")]
+[node name="RigidBody3D3" parent="Objects" unique_id=247538991 instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7581171, 1.0000005, 1.9449282)
 
-[node name="RigidBody3D4" parent="Objects" instance=ExtResource("3_j5yw3")]
+[node name="RigidBody3D4" parent="Objects" unique_id=90599280 instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.587346, 1.0000005, 3.5102477)
 
-[node name="RigidBody3D5" parent="Objects" instance=ExtResource("3_j5yw3")]
+[node name="RigidBody3D5" parent="Objects" unique_id=2090723256 instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0088563, 1.0000005, 3.618701)
 
-[node name="ScoreController" type="Node" parent="."]
+[node name="ScoreController" type="Node" parent="." unique_id=689627413]
 unique_name_in_owner = true
 script = ExtResource("6_7lihs")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1506055346]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=277823533]
 offset_left = 37.0
 offset_right = 280.0
 offset_bottom = 97.0
@@ -102,7 +102,7 @@ theme_override_font_sizes/font_size = 71
 text = "0"
 script = ExtResource("7_fgofq")
 
-[node name="Musica" type="AudioStreamPlayer" parent="."]
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1420233266]
 stream = ExtResource("8_2irst")
 volume_db = -20.0
 autoplay = true
