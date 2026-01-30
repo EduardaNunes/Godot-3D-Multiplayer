@@ -7,6 +7,24 @@ var shader_material : ShaderMaterial = null
 @onready var collision: CollisionShape3D = $CollisionShape3D
 #wdd@onready var objects_pool : Node3D = self.get_parent()
 
+@export var mesh_list : Array[StringName] = [
+	"res://Assets/Decoracao/barrel_small.gltf",
+	"res://Assets/Decoracao/barrel_small_stack.gltf",
+	"res://Assets/Decoracao/bottle_A_green.gltf",
+	"res://Assets/Decoracao/bottle_A_brown.gltf",
+	"res://Assets/Decoracao/bottle_B_brown.gltf",
+	"res://Assets/Decoracao/bottle_B_green.gltf",
+	"res://Assets/Decoracao/box_large.gltf",
+	"res://Assets/Decoracao/box_small.gltf",
+	"res://Assets/Decoracao/box_small_decorated.gltf",
+	"res://Assets/Decoracao/chair.gltf",
+	"res://Assets/Decoracao/chest.gltf",
+	"res://Assets/Decoracao/chest_gold.gltf",
+	"res://Assets/Decoracao/coin_stack_medium.gltf",
+	"res://Assets/Decoracao/coin_stack_small.gltf",
+	"res://Assets/Decoracao/crates_stacked.gltf"
+]
+
 # ---------------------------------------------------------------------------- #
 
 func _ready() -> void:

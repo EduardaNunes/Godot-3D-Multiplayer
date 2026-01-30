@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://crueferqv15rv"]
+[gd_scene format=3 uid="uid://crueferqv15rv"]
 
 [ext_resource type="PackedScene" uid="uid://ceokoxq7ew03r" path="res://Scenes/godot_plush_model.tscn" id="1_837kf"]
 [ext_resource type="Script" uid="uid://d270r6phsxe1k" path="res://Scripts/Player_top_down.gd" id="1_obksh"]
 [ext_resource type="Script" uid="uid://bpgjjp7cp0y1" path="res://Scripts/camera_player.gd" id="3_po5vt"]
-[ext_resource type="Script" path="res://Scripts/Player_hand_script.gd" id="4_sepqe"]
+[ext_resource type="Script" uid="uid://c276p5o2s824r" path="res://Scripts/Player_hand_script.gd" id="4_sepqe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obksh"]
 height = 1.6065674
@@ -22,37 +22,40 @@ properties/2/replication_mode = 1
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_po5vt"]
 radius = 2.0
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1253753106]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_obksh")
 
-[node name="godot_plush_model" parent="." instance=ExtResource("1_837kf")]
+[node name="godot_plush_model" parent="." unique_id=593840128 instance=ExtResource("1_837kf")]
 
-[node name="HandPosition" type="Marker3D" parent="godot_plush_model"]
+[node name="AnimationPlayer" parent="godot_plush_model" index="1"]
+autoplay = &"idle"
+
+[node name="HandPosition" type="Marker3D" parent="godot_plush_model" unique_id=1223174392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92269456, 1.0245242)
 gizmo_extents = 0.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1191412601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8065796, 0)
 shape = SubResource("CapsuleShape3D_obksh")
 
-[node name="CameraPosition" type="Node3D" parent="."]
+[node name="CameraPosition" type="Node3D" parent="." unique_id=97833281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5553913, 4.0302596)
 
-[node name="Camera3D" type="Camera3D" parent="CameraPosition" node_paths=PackedStringArray("camera_anchor")]
+[node name="Camera3D" type="Camera3D" parent="CameraPosition" unique_id=970580299 node_paths=PackedStringArray("camera_anchor")]
 transform = Transform3D(1, 0, 0, 0, 0.50000006, 0.8660254, 0, -0.86602545, 0.50000006, 0, 7.5638785, 4.012788)
 top_level = true
 script = ExtResource("3_po5vt")
 camera_anchor = NodePath("..")
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=999993157]
 replication_config = SubResource("SceneReplicationConfig_po5vt")
 
-[node name="ObjectArea" type="Area3D" parent="."]
+[node name="ObjectArea" type="Area3D" parent="." unique_id=780908142]
 script = ExtResource("4_sepqe")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectArea" unique_id=929892017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0143763, 0)
 shape = SubResource("CylinderShape3D_po5vt")
 
