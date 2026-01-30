@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbvg5shpa6ktq"]
+[gd_scene load_steps=15 format=3 uid="uid://dbvg5shpa6ktq"]
 
 [ext_resource type="PackedScene" uid="uid://crueferqv15rv" path="res://Scenes/Player_top_down.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://cxcajbhojshqd" path="res://Scripts/spawn_point.gd" id="1_j5yw3"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://f7pfamv7sljl" path="res://Scenes/Pickable_object.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://kgxpdsbm85oi" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
 [ext_resource type="Script" uid="uid://c7ok2mqc8vk1x" path="res://Scripts/score_controller.gd" id="6_7lihs"]
-[ext_resource type="Script" uid="uid://pjk1rxvavb7x" path="res://Scripts/Score_label.gd" id="7_fgofq"]
+[ext_resource type="Script" path="res://Scripts/Score_label.gd" id="7_fgofq"]
+[ext_resource type="AudioStream" uid="uid://bc3b2dbq5wrqq" path="res://Assets/Music/PerituneMaterial_Gothic_Cute_inst(chosic.com).mp3" id="8_2irst"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iukft"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -100,6 +101,9 @@ offset_bottom = 97.0
 theme_override_font_sizes/font_size = 71
 text = "0"
 script = ExtResource("7_fgofq")
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2irst")
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]
 
