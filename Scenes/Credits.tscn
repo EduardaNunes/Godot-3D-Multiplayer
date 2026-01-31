@@ -4,12 +4,6 @@
 [ext_resource type="FontFile" uid="uid://brgd3gf6diskh" path="res://Assets/Fonts/ThaleahFat.ttf" id="5_b20xe"]
 [ext_resource type="AudioStream" uid="uid://d2bhuw8rnkhwk" path="res://Assets/Sounds/jump05.wav" id="7_x5suk"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g74la"]
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
-
 [node name="Credits" type="Control" unique_id=1623887134]
 layout_mode = 3
 anchors_preset = 15
@@ -29,7 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=61044007]
-self_modulate = Color(0, 0, 0, 0.78431374)
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -37,13 +30,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -200.0
-offset_right = 250.0
-offset_bottom = 200.0
+offset_left = -413.5
+offset_top = -285.0
+offset_right = 413.5
+offset_bottom = 285.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_g74la")
 
 [node name="Container" type="BoxContainer" parent="Panel" unique_id=2099314037]
 layout_mode = 1

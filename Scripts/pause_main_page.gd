@@ -22,5 +22,6 @@ func show_config():
 	config_page.show()
 
 func return_to_main_menu():
+	hide()
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 	pass
