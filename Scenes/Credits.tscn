@@ -85,6 +85,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Game Developer - Eduarda P M Nunes"
 
+[node name="Label10" type="Label" parent="Panel/Container/VBoxContainer/VBoxContainer" unique_id=766332968]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Developer -João Pedro Miranda Salim"
+
 [node name="Label2" type="Label" parent="Panel/Container/VBoxContainer/VBoxContainer" unique_id=536063818]
 layout_mode = 2
 size_flags_horizontal = 4
