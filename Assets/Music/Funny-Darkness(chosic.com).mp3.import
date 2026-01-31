@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Funny-Darkness(chosic.com).mp3-0d34c82661bcc8
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
