@@ -96,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.817131, 1.4374685, 9.96320
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.10577, 0.26995373, 8.312851)
 
 [node name="RigidBody3D25" parent="Objects" unique_id=19501750 instance=ExtResource("3_j5yw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.205406, 1.1470165, 7.1773834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.828217, 1.1470165, 7.1773834)
 
 [node name="RigidBody3D26" parent="Objects" unique_id=1696563639 instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.730804, 1.2952967, 11.924866)
@@ -220,19 +220,18 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.282059)
 
 [node name="Marker1" type="Marker3D" parent="MonsterFollowPoints" unique_id=426383527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.167536, 3.0468369, 1.8355656)
 
 [node name="Marker2" type="Marker3D" parent="MonsterFollowPoints" unique_id=253929012]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.423946, 2.79992, -18.055912)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.423946, 0, -18.055912)
 
 [node name="Marker3" type="Marker3D" parent="MonsterFollowPoints" unique_id=912240093]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.823746, 2.2468538, -7.640381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.824715, 0, -10.6996)
 
 [node name="Marker4" type="Marker3D" parent="MonsterFollowPoints" unique_id=1131971124]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.927845, 2.1506958, 17.58398)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.93331, 0, 21.385216)
 
 [node name="Marker5" type="Marker3D" parent="MonsterFollowPoints" unique_id=1430872881]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.612434, 2.4590955, 19.540375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.612434, 0, 19.540375)
 
 [node name="Cenario" type="Node3D" parent="." unique_id=943411031]
 
@@ -285,7 +284,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059509277, 0.2949829, 0.0
 shape = SubResource("BoxShape3D_3so38")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_medium2/StaticBody3D" unique_id=446797399]
-vertices = PackedVector3Array(-1.419466, 0, -1.2762394, -1.411911, 0, 1.2663403, 1.4881725, 0, 1.3417149, 1.4471512, 0, -1.3735905)
 
 [node name="table_medium3" parent="Cenario" unique_id=801604540 instance=ExtResource("11_dahhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.174385, 2, 36.522552)
@@ -297,7 +295,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059509277, 0.2949829, 0.0
 shape = SubResource("BoxShape3D_3so38")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_medium3/StaticBody3D" unique_id=709261415]
-vertices = PackedVector3Array(-1.2455063, 0, -1.2776871, -1.273304, 0, 1.3698959, 1.3271332, 0, 1.3637123, 1.4024353, 0, -1.2611694)
 
 [node name="table_medium4" parent="Cenario" unique_id=1887390120 instance=ExtResource("11_dahhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.73259, 2, 47.01197)
@@ -309,20 +306,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059509277, 0.2949829, 0.0
 shape = SubResource("BoxShape3D_3so38")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_medium4/StaticBody3D" unique_id=1910075001]
-vertices = PackedVector3Array(-1.1916122, 0, -1.2318115, -1.1222687, 0, 1.0687523, 1.316822, 0, 1.01194, 1.6415291, 0, -1.5635948, -1.2397499, 0, -1.4405594)
 
 [node name="table_medium5" parent="Cenario" unique_id=1695640621 instance=ExtResource("11_dahhg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.207245, 2, 44.155045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.72974, 2, 44.155045)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cenario/table_medium5" unique_id=726075392]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13219166, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/table_medium5/StaticBody3D" unique_id=1022573565]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059509277, 0.2949829, 0.03503418)
 shape = SubResource("BoxShape3D_3so38")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_medium5/StaticBody3D" unique_id=794273298]
-vertices = PackedVector3Array(-1.3382034, 0, -1.1275177, -1.1793671, 0, 0.9087219, 1.1295242, 0, 0.9856987, 1.4338379, 0, -1.4236755)
 
 [node name="table_medium6" parent="Cenario" unique_id=1405033848 instance=ExtResource("11_dahhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.47324, 1.9999981, 13.725731)
@@ -334,7 +328,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059509277, 0.2949829, 0.0
 shape = SubResource("BoxShape3D_3so38")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_medium6/StaticBody3D" unique_id=1530105963]
-vertices = PackedVector3Array(-1.2713699, 0, -1.1981716, -1.2781525, 0, 1.2453957, 1.4600334, 0, 1.2386866, 1.3467522, 0, -1.2532692)
 
 [node name="table_long2" parent="Cenario" unique_id=442233507 instance=ExtResource("26_dctr5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.199443, 2, 26.36684)
@@ -346,7 +339,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045166016, 0.27612305, 0.
 shape = SubResource("BoxShape3D_3cx6b")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_long2/StaticBody3D" unique_id=186604934]
-vertices = PackedVector3Array(-1.3284473, 0, 2.4472818, -1.3914375, 0, -2.3775463, 1.41959, 0, -2.4798355, 1.2648487, 0, 2.608991)
 
 [node name="table_long3" parent="Cenario" unique_id=1770678566 instance=ExtResource("26_dctr5")]
 transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, 37.094097, 2, 48.302704)
@@ -358,7 +350,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045166016, 0.27612305, 0.
 shape = SubResource("BoxShape3D_3cx6b")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_long3/StaticBody3D" unique_id=1572922821]
-vertices = PackedVector3Array(1.35355, 0, 2.4960632, 1.3056335, 0, -2.4509964, -1.3826714, 0, -2.4659424, -1.3262672, 0, 2.5535507)
 
 [node name="table_long4" parent="Cenario" unique_id=1146651460 instance=ExtResource("26_dctr5")]
 transform = Transform3D(-0.70710665, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, -0.70710665, 75.48955, 1.9999981, 48.389145)
@@ -370,6 +361,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045166016, 0.27612305, 0.
 shape = SubResource("BoxShape3D_3cx6b")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Cenario/table_long4/StaticBody3D" unique_id=1541365031]
-vertices = PackedVector3Array(1.3294067, 0, -2.6043968, -1.3325958, 0, -2.4266624, -1.2139587, 0, 2.5440674, 1.3561249, 0, 2.4051743)
 
 [connection signal="body_exited" from="SpawnPoint" to="SpawnPoint" method="_on_body_exited"]

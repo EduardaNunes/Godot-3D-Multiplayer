@@ -1,8 +1,9 @@
 extends Node3D
 
+signal game_ended(winner)
 @export var players_alive : int
 
-var POINTS_TO_WIN = 4
+var POINTS_TO_WIN = 10
 
 # ---------------------------------------------------------------------------- #
 
@@ -15,7 +16,6 @@ func _ready() -> void:
 	if multiplayer.is_server():
 		await get_tree().process_frame
 		players_alive = $PlayerMultiplayerSpawner.players_spawned
-		print(players_alive)
 	
 # ---------------------------------------------------------------------------- #
 
@@ -28,8 +28,7 @@ func check_game_end(points : int) -> void:
 # ---------------------------------------------------------------------------- #
 	
 func end_game(winner : String):
-	if winner == "Players": print('Jogadores Ganharam!')
-	elif winner == "Monster": print('Monstro Ganhou!')
+	game_ended.emit(winner)
 
 # ---------------------------------------------------------------------------- #
 
@@ -37,7 +36,6 @@ func increase_players_alive() -> void:
 	if not multiplayer.is_server(): return
 	
 	players_alive += 1
-	print(players_alive)
 	
 # ---------------------------------------------------------------------------- #
 
