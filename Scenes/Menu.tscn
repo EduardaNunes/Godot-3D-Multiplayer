@@ -5,11 +5,13 @@
 [ext_resource type="FontFile" uid="uid://brgd3gf6diskh" path="res://Assets/Fonts/ThaleahFat.ttf" id="3_3j6ch"]
 [ext_resource type="PackedScene" uid="uid://cg1pbh1isv2f1" path="res://Scenes/Credits.tscn" id="3_idohh"]
 [ext_resource type="AudioStream" uid="uid://g6bmoiaeh42d" path="res://Assets/Music/Funny-Darkness(chosic.com).mp3" id="5_ma218"]
+[ext_resource type="Texture2D" uid="uid://dthxmgpjhhgwb" path="res://white_block.png" id="5_wfhf6"]
 [ext_resource type="AudioStream" uid="uid://d2bhuw8rnkhwk" path="res://Assets/Sounds/jump05.wav" id="9_wvbt5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idohh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jcrr"]
+texture = ExtResource("5_wfhf6")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
@@ -175,7 +177,6 @@ text = "Ok
 "
 
 [node name="Input_IP" type="Panel" parent="." unique_id=163310264]
-visible = false
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 layout_mode = 1
