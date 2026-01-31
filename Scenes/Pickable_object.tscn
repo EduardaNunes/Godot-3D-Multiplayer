@@ -29,3 +29,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_mu8rr")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=241522998]
+vertices = PackedVector3Array(0.7953926, 0, -0.76266193, 0.76195884, 0, 0.7682245, -0.8097726, 0, 0.7741136, -0.77749246, 0, -0.75059086)
