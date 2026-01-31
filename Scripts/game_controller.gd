@@ -16,7 +16,6 @@ func _ready() -> void:
 	if multiplayer.is_server():
 		await get_tree().process_frame
 		players_alive = $PlayerMultiplayerSpawner.players_spawned
-		print(players_alive)
 	
 # ---------------------------------------------------------------------------- #
 
@@ -37,7 +36,6 @@ func increase_players_alive() -> void:
 	if not multiplayer.is_server(): return
 	
 	players_alive += 1
-	print(players_alive)
 	
 # ---------------------------------------------------------------------------- #
 
