@@ -2,11 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7yxlhwrdd7ur" path="res://Scenes/monster.gd" id="1_yyra8"]
 [ext_resource type="Script" uid="uid://ptcqntpamtoy" path="res://Scripts/monster_vision_area.gd" id="2_brqr3"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_wqfq0"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_i6tiu"]
+[ext_resource type="PackedScene" uid="uid://c8lwhivpqdm7u" path="res://Assets/Monster/ghost.gltf" id="3_wqfq0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yyra8"]
 
@@ -21,16 +17,73 @@ properties/1/replication_mode = 1
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yyra8"]
 points = PackedVector3Array(-5, 0, -5, 0, 0, 0, 5, 0, -5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqfq0"]
+
+[sub_resource type="Animation" id="Animation_li8cl"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GhostMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.4, 0), Vector3(0, 0, 0), Vector3(0, -0.4, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GhostMesh:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.01, 1.5, 2),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2, 1),
+"update": 0,
+"values": [Vector3(0.12, 0.12, 0.12), Vector3(0.1, 0.14, 0.1), Vector3(0.12, 0.12, 0.12), Vector3(0.15, 0.1, 0.15), Vector3(0.12, 0.12, 0.12)]
+}
+
+[sub_resource type="Animation" id="Animation_wqfq0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GhostMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GhostMesh:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.12, 0.12, 0.12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvjcv"]
+_data = {
+&"Idle": SubResource("Animation_li8cl"),
+&"RESET": SubResource("Animation_wqfq0")
+}
+
 [node name="Monster" type="CharacterBody3D" unique_id=1166806044]
 collision_mask = 3
 script = ExtResource("1_yyra8")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=984854757]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4592135, -0.38726413)
-mesh = SubResource("BoxMesh_wqfq0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=465904391]
-mesh = SubResource("CapsuleMesh_i6tiu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=13895989]
 shape = SubResource("CapsuleShape3D_yyra8")
@@ -52,5 +105,20 @@ target_position = Vector3(0, 0, -5)
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 5
 
+[node name="GhostMesh" parent="." unique_id=493337599 instance=ExtResource("3_wqfq0")]
+transform = Transform3D(-5.2453664e-09, 0, 0.12, 0, 0.12, 0, -0.12, 0, -5.2453664e-09, 0, 0, 0)
+
+[node name="Cylinder_Material_0" parent="GhostMesh/Sketchfab_model/61c1c55112ff43d8b3b13ba13c17e092_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(493337599, 502140510) index="0" unique_id=835739833]
+material_override = SubResource("ShaderMaterial_wqfq0")
+
+[node name="Cylinder_002" parent="GhostMesh/Sketchfab_model/61c1c55112ff43d8b3b13ba13c17e092_fbx/RootNode" parent_id_path=PackedInt32Array(493337599, 1851994162) index="1" unique_id=160593822]
+transform = Transform3D(-87.31349, -7.633188e-06, -1.2436042e-12, -1.6949082e-21, -1.4225174e-05, 87.31349, -7.633188e-06, 87.31349, 1.4225174e-05, 0.33497715, 0.6515142, 0.040892884)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=151741965]
+libraries/ = SubResource("AnimationLibrary_fvjcv")
+autoplay = &"Idle"
+
 [connection signal="body_entered" from="VisionArea" to="VisionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="VisionArea" to="VisionArea" method="_on_body_exited"]
+
+[editable path="GhostMesh"]

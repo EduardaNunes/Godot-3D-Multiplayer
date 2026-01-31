@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://f7pfamv7sljl" path="res://Scenes/Pickable_object.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://kgxpdsbm85oi" path="res://Scenes/place_object_here.tscn" id="5_b2bpf"]
 [ext_resource type="Script" uid="uid://c7ok2mqc8vk1x" path="res://Scripts/score_controller.gd" id="6_7lihs"]
-[ext_resource type="Script" uid="uid://pjk1rxvavb7x" path="res://Scripts/Score_label.gd" id="7_fgofq"]
+[ext_resource type="Script" path="res://Scripts/Score_label.gd" id="7_fgofq"]
 [ext_resource type="MeshLibrary" uid="uid://dwacmc6t3bltu" path="res://Mesh/TileSet_Collisions.tres" id="8_2irst"]
 [ext_resource type="PackedScene" uid="uid://clqqdsmoojokc" path="res://Scenes/Monster.tscn" id="9_71axn"]
 [ext_resource type="PackedScene" uid="uid://bpogs5rgevykv" path="res://Assets/Decoracao/torch_lit.gltf" id="10_71axn"]
