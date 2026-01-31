@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://clqqdsmoojokc" path="res://Scenes/Monster.tscn" id="9_71axn"]
 [ext_resource type="PackedScene" uid="uid://bmr2ypiebnyj7" path="res://Scenes/GameOver_Menu.tscn" id="9_wxwew"]
 [ext_resource type="PackedScene" uid="uid://bpogs5rgevykv" path="res://Assets/Decoracao/torch_lit.gltf" id="10_71axn"]
+[ext_resource type="Script" uid="uid://ywacwhygsnf6" path="res://Scripts/server_ip.gd" id="10_acvyw"]
+[ext_resource type="FontFile" uid="uid://brgd3gf6diskh" path="res://Assets/Fonts/ThaleahFat.ttf" id="10_alh3a"]
 [ext_resource type="PackedScene" uid="uid://cjhd4qxrwrm0n" path="res://Assets/Decoracao/table_medium.gltf" id="11_dahhg"]
 [ext_resource type="PackedScene" uid="uid://dgdpw8eg42q0w" path="res://Assets/Decoracao/table_long.gltf" id="26_dctr5"]
 
@@ -194,6 +196,16 @@ text = "0"
 script = ExtResource("7_fgofq")
 
 [node name="GameOverMenu" parent="CanvasLayer" unique_id=533271164 instance=ExtResource("9_wxwew")]
+
+[node name="Server_IP" type="Label" parent="CanvasLayer" unique_id=1517316654]
+offset_left = 988.0
+offset_top = 10.0
+offset_right = 1138.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("10_alh3a")
+theme_override_font_sizes/font_size = 32
+text = "192.168.0.00"
+script = ExtResource("10_acvyw")
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1420233266]
 volume_db = -20.0
