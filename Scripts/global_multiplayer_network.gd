@@ -56,7 +56,6 @@ func on_server_disconnected() -> void:
 
 func _on_connected_ok():
 	connection_timer.stop()
-	
 	connection_notification.emit(true, 'sucesso')
 
 # ---------------------------------------------------------------------------- #

@@ -4,6 +4,7 @@ var speed = 5.0
 var direction : Vector3
 var looking_direction : Vector3
 
+@onready var collision : CollisionShape3D = $CollisionShape3D
 @onready var model: Node3D = $godot_plush_model
 @onready var animation: AnimationPlayer = $godot_plush_model/AnimationPlayer
 @onready var camera: Camera3D = $CameraPosition/Camera3D
@@ -60,3 +61,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		player_hand.interact(looking_direction)
 
 # ---------------------------------------------------------------------------- #
+
+@rpc("any_peer", "call_local", "reliable")
+func set_dead_state():
+	set_physics_process(false)
+	set_process(false)
+	collision.disabled = true
+	collision_layer = 0
+	collision_mask = 0
+	hide()
