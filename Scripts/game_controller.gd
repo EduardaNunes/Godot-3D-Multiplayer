@@ -1,5 +1,6 @@
 extends Node3D
 
+signal game_ended(winner)
 @export var players_alive : int
 
 var POINTS_TO_WIN = 4
@@ -28,8 +29,7 @@ func check_game_end(points : int) -> void:
 # ---------------------------------------------------------------------------- #
 	
 func end_game(winner : String):
-	if winner == "Players": print('Jogadores Ganharam!')
-	elif winner == "Monster": print('Monstro Ganhou!')
+	game_ended.emit(winner)
 
 # ---------------------------------------------------------------------------- #
 
