@@ -70,3 +70,25 @@ func set_dead_state():
 	collision_layer = 0
 	collision_mask = 0
 	hide()
+	
+	if is_multiplayer_authority():
+		_switch_to_spectator_camera()
+		
+func _switch_to_spectator_camera():
+	var players_container = get_parent() 
+	var target = null
+	
+	for node in players_container.get_children():
+
+		if node is CharacterBody3D and node != self and node.visible and node.name != "Monster":
+			target = node
+			break
+	
+	if target:
+		var cam_pos = $CameraPosition
+	
+		var target_cam_pos = target.get_node_or_null("CameraPosition")
+		cam_pos.reparent(target)
+		cam_pos.transform = target_cam_pos.transform
+	
+# ---------------------------------------------------------------------------- #
