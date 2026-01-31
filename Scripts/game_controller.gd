@@ -3,7 +3,7 @@ extends Node3D
 signal game_ended(winner)
 @export var players_alive : int
 
-var POINTS_TO_WIN = 4
+var POINTS_TO_WIN = 10
 
 # ---------------------------------------------------------------------------- #
 
